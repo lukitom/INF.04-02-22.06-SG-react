@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FormInput from './components/FormInput';
 
 function App() {
   const [kursy, setKursy] = useState([
@@ -48,26 +49,17 @@ function App() {
         }
       </ol>
       <form className='form'>
-        <div className='form-group'>
-          <label htmlFor="imieNazwisko" className='mb-3'>Imię i nazwisko</label>
-          <input
-            type="text"
-            id="imieNazwisko"
-            name="imieNazwisko"
-            className='form-control'
-            value={daneFormularz.imieNazwisko}
-            onChange={formChangeHandler} />
-        </div>
-        <div className='form-group mt-3'>
-          <label htmlFor="kursNr" className="mb-3">Number kursu</label>
-          <input
-            type="number"
-            id='kursNr'
-            name="kursNr"
-            className='form-control'
-            value={daneFormularz.kursNr}
-            onChange={formChangeHandler} />
-        </div>
+        <FormInput
+          fieldId="imieNazwisko"
+          label="Imię i nazwisko"
+          value={daneFormularz.imieNazwisko}
+          changeHandler={formChangeHandler}/>
+        
+        <FormInput
+          fieldId="kursNr"
+          label="Number kursu"
+          value={daneFormularz.kursNr}
+          changeHandler={formChangeHandler} />
 
         <button
           type='submit'
