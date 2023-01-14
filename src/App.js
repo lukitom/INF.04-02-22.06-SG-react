@@ -41,7 +41,7 @@ function App() {
   }
 
   return (
-    <div className="App p-4">
+    <div className="container">
       <h2>Liczba kursów: {kursy.length}</h2>
       <ol>
         {
